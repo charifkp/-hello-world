@@ -1,8 +1,8 @@
-# Use Case 1: Create a Science Plan**
+# Use Case 1: Create a Science Plan #
 
-- **Use Case Name:** Create a Science Plan
-- **Actor(s):** Researcher, Scientist
-- **Pre-condition:** The user is logged into the system.
+- **Use Case Name:** Create a Science Plan **
+- **Actor(s):** Researcher, Scientist **
+- **Pre-condition:** The user is logged into the system. **
 - **Description:** The user creates a new science plan by specifying the title, research goals, and the basic framework for the research project.
 - **Basic Flow:**
     1. User logs into the system.
