@@ -1,10 +1,13 @@
 # USE CASE DESCRIPTION
 | Use Case 1: | Create a Science Plan | 
-|-------------|-----------------------|
+|-----------------|-----------------------|
 | Use Case Name:     | Create a Science Plan | 
 | Actor(s):          | Researcher, Scientist  | 
 | Pre-condition:     | The user is logged into the system. |  
+| Relationships      | Include: Manage Metadata() |
 | Description:       | The user creates a new science plan by specifying the title, research goals, and the basic framework for the research project. |
+| Ralationships      | Association: Researcher |
+|                    | Include: Manage Metadata() |
 | Basic Flow:        | 1. User logs into the system.|
 |                    | 2. User selects the option to "Create Science Plan."|
 |                    | 3. User enters the title of the plan.|
@@ -14,11 +17,14 @@
 | Alternative Flow: | If required fields are missing, the system prompts the user to fill in the necessary information. |
 
 | Use Case 2 | Add Science Plan | 
-| -----------|------------------|
+| --------------|------------------|
 | Use Case Name | Add Science Plan |
 | Actor(s) | Researcher, Scientist, Administrator |
 | Pre-condition | The user is logged into the system, and a science plan has been created. |
 | Description | The user adds more details to the science plan, such as research methods, resources, and a timeline for completing tasks. |
+| Ralationships |  Association: Administrator |
+|               |  Include: Manage Matadata() |
+|               |  Extend : Manage Support Details() |
 | Basic Flow | 1.User selects the "Add Science Plan" option.|
 |            | 2.User uploads any additional documents or supporting data.|
 |            | 3.User defines the research methods, resources, and budget allocation.|
@@ -27,12 +33,16 @@
 | Post-condition | The science plan has additional details saved to the system.|
 | Alternative Flow | If any field is left incomplete or an invalid file is uploaded, the system notifies the user to correct it.|
 
-| Use Case 3 | Update Science Plan |
-|------------|---------------------|
+
+
+| Use Case 3  | Update Science Plan |
+|-------------|---------------------|
 | Use Case Name | Update Science Plan |
 | Actor(s) | Researcher, Scientist, Project Manager |
 | Pre-condition | The user has created or added a science plan that is in progress. |
 | Description | The user updates an existing science plan by modifying details like goals, methods, timeline, or resources, based on changes or new findings. |
+| Ralationships | Association: Researcher |
+|               | Include: Manage Metadata() |
 | Basic Flow | 1. User selects the science plan to be updated from the dashboard. |
 |            | 2. User reviews the existing plan.|
 |            | 3. User updates any necessary fields such as goals, methods, or timeline.|
@@ -46,6 +56,8 @@
 | Actor(s) | Researcher, Scientist, Project Manager |
 | Pre-condition | The user has an active science plan stored in the system.|
 | Description |  The user cancels the science plan, removes it from active status, and deletes any associated storage, documents, or resources.|
+| Relationship | Association: Researcher |
+|              | Include: Manage Matadata() |
 | Basic Flow | 1. User selects the "Cancel Science Plan" option.|
 |            | 2. User confirms the cancellation by reviewing the plan’s status and associated documents.|
 |            | 3. User chooses to either archive or delete any stored resources or documents associated with the plan.|
@@ -58,6 +70,9 @@
 | Use Case Name | est Science Plan |
 | Actor(s) | Researcher, Scientist, Project Manager |
 | Pre-condition | The science plan has been defined with all necessary components, including research methods and resources.|
+| Relationships | Association: Researcher |
+|               | Include: Manage Metadata() |
+|               | Extend: Mark as tested |
 | Description | The user tests the feasibility and effectiveness of the science plan by running simulations, small-scale experiments, or mock trials to validate assumptions before full implementation. |
 | Basic Flow | 1. User selects the "Test Science Plan" option.|
 |            | 2. User initiates small-scale tests, simulations, or trials based on the plan.|
